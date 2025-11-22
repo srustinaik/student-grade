@@ -1,15 +1,15 @@
-# Program to calculate average marks of 5 subjects and grade
+import sys
+if len(sys.argv) != 6:
+    print("Usage: python program.py mark1 mark2 mark3 mark4 mark5")
+    sys.exit(1)
 
-# Accept marks from the user
-marks = []
-for i in range(1, 6):
-    mark = float(input(f"Enter marks for subject {i}: "))
-    marks.append(mark)
 
-# Calculate average
+marks = [float(arg) for arg in sys.argv[1:6]]
+
+
 average = sum(marks) / len(marks)
 
-# Determine grade
+
 if average >= 90:
     grade = "A"
 elif average >= 75:
